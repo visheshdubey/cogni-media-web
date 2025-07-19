@@ -9,7 +9,7 @@ const NavHeader = () => {
                 <div className="size-6 bg-blue-200 rounded-full"></div>
                 <h1 className="text-2xl font-bold text-white font-bricolage">CogniMedia</h1>
             </div>
-            <nav className="max-w-lg w-full">
+            <nav className="hidden lg:block max-w-sm lg:max-w-md xl:max-w-lg w-full">
                 <ul className="flex gap-8 text-white/90 font-semibold text-sm items-center justify-between">
                     <li>
                         <Link href="/">Home</Link>
@@ -27,7 +27,7 @@ const NavHeader = () => {
             </nav>
             <Button
                 variant="outline"
-                className="h-11 px-6 border-white/80 text-white/90 font-semibold text-sm bg-transparent hover:bg-brand-primary hover:text-white hover:border-brand-secondary"
+                className="h-11 hidden lg:flex px-6 border-white/80 text-white/90 font-semibold text-sm bg-transparent hover:bg-brand-primary hover:text-white hover:border-brand-secondary"
             >
                 <Link href="/login">Get in touch</Link>
             </Button>
