@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { AlignJustify } from "lucide-react";
 
 const NavHeader = () => {
     return (
@@ -31,6 +33,28 @@ const NavHeader = () => {
             >
                 <Link href="/login">Get in touch</Link>
             </Button>
+
+            <Sheet>
+                <SheetTrigger className="lg:hidden">
+                    <AlignJustify className="text-white" />
+                </SheetTrigger>
+                <SheetContent className="bg-black/60 border-none [&>svg]:text-white pt-12">
+                    <ul className="flex flex-col gap-8 text-white/90 font-semibold text-2xl font-bricolage items-center justify-between">
+                        <li>
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/about">Services</Link>
+                        </li>
+                        <li>
+                            <Link href="/contact">Industries</Link>
+                        </li>
+                        <li>
+                            <Link href="/about">About</Link>
+                        </li>
+                    </ul>
+                </SheetContent>
+            </Sheet>
         </header>
     );
 };
