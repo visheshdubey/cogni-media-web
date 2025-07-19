@@ -1,9 +1,11 @@
-import { HeroCarousel } from "./_comps/HeroCarousel";
+import { SectionHeroCarousel } from "./_comps/SectionHeroCarousel";
+import SectionAboutUs from "./_comps/SectionAboutUs";
 
 export default function Home() {
     return (
         <main>
-            <HeroCarousel />
+            <SectionHeroCarousel />
+            <SectionAboutUs />
         </main>
     );
 }
