@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
-import { AnimationVariant, TextAnimate2 } from "@/components/magicui/text-animate-2";
+import { TextAnimate } from "@/components/magicui/text-animate";
 import React from "react";
+import { AnimationVariant } from "@/components/magicui/text-animate-2";
 
 type Props = {
     children: string;
@@ -10,9 +11,9 @@ type Props = {
 
 const AnimatedSectionTitle = ({ children, className, animation = "blurInUp" }: Props) => {
     return (
-        <TextAnimate2 animation={animation} duration={0.5} as="h1" className={cn("text-3xl md:text-5xl font-bricolage font-semibold leading-tight", className)}>
+        <TextAnimate animation={animation} duration={0.5} as="h1" className={cn("text-3xl md:text-5xl font-bricolage font-semibold leading-tight", className)}>
             {children}
-        </TextAnimate2>
+        </TextAnimate>
     );
 };
 
