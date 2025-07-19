@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const NavHeader = () => {
     return (
-        <header className="flex justify-between items-center p-4">
+        <header className="flex justify-between items-center p-4 fixed top-0 left-0 right-0 z-50">
             <div className="flex gap-2 items-center">
                 <div className="size-6 bg-blue-200 rounded-full"></div>
                 <h1 className="text-xl font-bold">CogniMedia</h1>
