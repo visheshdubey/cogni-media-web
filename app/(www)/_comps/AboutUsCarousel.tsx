@@ -70,34 +70,31 @@ const AboutUsCarousel = ({ className }: { className?: string }) => {
                     ))}
                 </CarouselContent>
             </Carousel>
-            <div className="flex items-center justify-between">
+            <div className="flex gap-4 items-center justify-between">
                 {/* Carousel Indicators */}
-                <div className="flex justify-center items-center gap-4">
+                <div className="hidden md:flex justify-center items-center gap-4">
                     {Array.from({ length: 10 }).map((_, index) => (
                         <button
                             key={index}
                             onClick={() => scrollTo(index)}
-                            className={cn(
-                                "w-3 h-3 rounded-full transition-all duration-300",
-                                currentSlide === index ? "bg-brand-primary/50 scale-110" : "bg-brand-primary/10 hover:bg-brand-primary/50"
-                            )}
+                            className={cn("w-3 h-3 rounded-full transition-all duration-300", currentSlide === index ? "bg-white/50 scale-110" : "bg-white/10 hover:bg-white/50")}
                             aria-label={`Go to slide ${index + 1}`}
                         />
                     ))}
                 </div>
 
                 {/* Navigation Controls */}
-                <div className="flex justify-center items-center gap-4">
+                <div className="justify-center flex items-center gap-4 ml-auto md:mr-4">
                     <button
                         onClick={scrollPrev}
-                        className="w-12 border-0 h-12 bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-md flex items-center justify-center transition-all duration-300"
+                        className="size-10 md:size-12 border-0  bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-md flex items-center justify-center transition-all duration-300"
                         aria-label="Previous slide"
                     >
                         <ChevronLeft className="size-5 text-brand-primary" />
                     </button>
                     <button
                         onClick={scrollNext}
-                        className="w-12 border-0 h-12 bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-md flex items-center justify-center transition-all duration-300"
+                        className="size-10 md:size-12 border-0 bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-md flex items-center justify-center transition-all duration-300"
                         aria-label="Next slide"
                     >
                         <ChevronRight className="size-5 text-brand-primary" />
