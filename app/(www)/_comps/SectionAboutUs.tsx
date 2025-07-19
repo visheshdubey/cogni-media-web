@@ -3,6 +3,7 @@ import SectionIconLabel from "@/app/_comps/SectionIconLabel";
 import { TextAnimate } from "@/components/magicui/text-animate";
 import { Rocket } from "lucide-react";
 import React from "react";
+import AboutUsCarousel from "./AboutUsCarousel";
 
 const SectionAboutUs = () => {
     return (
@@ -21,6 +22,8 @@ const SectionAboutUs = () => {
                     healthcare, and more.
                 </TextAnimate>
             </div>
+
+            <AboutUsCarousel className="mt-32" />
         </div>
     );
 };
