@@ -10,7 +10,7 @@ type Props = {
 
 const AnimatedSectionTitle = ({ children, className, animation = "blurInUp" }: Props) => {
     return (
-        <TextAnimate2 animation={animation} duration={0.5} as="h1" className={cn("text-5xl font-bricolage font-semibold leading-tight", className)}>
+        <TextAnimate2 animation={animation} duration={0.5} as="h1" className={cn("text-3xl md:text-5xl font-bricolage font-semibold leading-tight", className)}>
             {children}
         </TextAnimate2>
     );
