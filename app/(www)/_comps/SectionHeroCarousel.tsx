@@ -81,7 +81,7 @@ export function SectionHeroCarousel() {
                         animation="blurInUp"
                         duration={0.5}
                         as="h1"
-                        className="text-4xl lg:text-5xl font-bricolage xl:text-7xl font-semibold mb-6 leading-tight text-white"
+                        className="text-4xl lg:text-5xl font-bricolage xl:text-6xl font-semibold mb-6 leading-tight text-white"
                     >
                         {slides[currentSlide].title}
                     </TextAnimate2>
