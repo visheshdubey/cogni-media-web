@@ -1,11 +1,11 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion, MotionProps, Variants } from "motion/react";
+import { motion, MotionProps, Variants } from "motion/react";
 import { ElementType, memo } from "react";
 
 type AnimationType = "text" | "word" | "character" | "line";
-type AnimationVariant = "fadeIn" | "blurIn" | "blurInUp" | "blurInDown" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "scaleUp" | "scaleDown";
+export type AnimationVariant = "fadeIn" | "blurIn" | "blurInUp" | "blurInDown" | "slideUp" | "slideDown" | "slideLeft" | "slideRight" | "scaleUp" | "scaleDown";
 
 interface TextAnimateProps extends MotionProps {
     /**
@@ -70,22 +70,12 @@ const defaultContainerVariants = {
             staggerChildren: 0.05,
         },
     },
-    exit: {
-        opacity: 0,
-        transition: {
-            staggerChildren: 0.05,
-            staggerDirection: -1,
-        },
-    },
 };
 
 const defaultItemVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
-    },
-    exit: {
-        opacity: 0,
     },
 };
 
@@ -101,11 +91,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                     duration: 0.3,
                 },
             },
-            exit: {
-                opacity: 0,
-                y: 20,
-                transition: { duration: 0.3 },
-            },
         },
     },
     blurIn: {
@@ -119,11 +104,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                     duration: 0.3,
                 },
             },
-            exit: {
-                opacity: 0,
-                filter: "blur(10px)",
-                transition: { duration: 0.3 },
-            },
         },
     },
     blurInUp: {
@@ -134,16 +114,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                 opacity: 1,
                 filter: "blur(0px)",
                 y: 0,
-                transition: {
-                    y: { duration: 0.3 },
-                    opacity: { duration: 0.4 },
-                    filter: { duration: 0.3 },
-                },
-            },
-            exit: {
-                opacity: 0,
-                filter: "blur(10px)",
-                y: 20,
                 transition: {
                     y: { duration: 0.3 },
                     opacity: { duration: 0.4 },
@@ -179,13 +149,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                     duration: 0.3,
                 },
             },
-            exit: {
-                y: -20,
-                opacity: 0,
-                transition: {
-                    duration: 0.3,
-                },
-            },
         },
     },
     slideDown: {
@@ -195,11 +158,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
             show: {
                 y: 0,
                 opacity: 1,
-                transition: { duration: 0.3 },
-            },
-            exit: {
-                y: 20,
-                opacity: 0,
                 transition: { duration: 0.3 },
             },
         },
@@ -213,11 +171,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                 opacity: 1,
                 transition: { duration: 0.3 },
             },
-            exit: {
-                x: -20,
-                opacity: 0,
-                transition: { duration: 0.3 },
-            },
         },
     },
     slideRight: {
@@ -227,11 +180,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
             show: {
                 x: 0,
                 opacity: 1,
-                transition: { duration: 0.3 },
-            },
-            exit: {
-                x: 20,
-                opacity: 0,
                 transition: { duration: 0.3 },
             },
         },
@@ -252,11 +200,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                     },
                 },
             },
-            exit: {
-                scale: 0.5,
-                opacity: 0,
-                transition: { duration: 0.3 },
-            },
         },
     },
     scaleDown: {
@@ -274,11 +217,6 @@ const defaultItemAnimationVariants: Record<AnimationVariant, { container: Varian
                         stiffness: 300,
                     },
                 },
-            },
-            exit: {
-                scale: 1.5,
-                opacity: 0,
-                transition: { duration: 0.3 },
             },
         },
     },
@@ -329,13 +267,6 @@ const TextAnimateBase = ({
                           staggerChildren: duration / segments.length,
                       },
                   },
-                  exit: {
-                      opacity: 0,
-                      transition: {
-                          staggerChildren: duration / segments.length,
-                          staggerDirection: -1,
-                      },
-                  },
               },
               item: variants,
           }
@@ -350,44 +281,26 @@ const TextAnimateBase = ({
                           staggerChildren: duration / segments.length,
                       },
                   },
-                  exit: {
-                      ...defaultItemAnimationVariants[animation].container.exit,
-                      transition: {
-                          staggerChildren: duration / segments.length,
-                          staggerDirection: -1,
-                      },
-                  },
               },
               item: defaultItemAnimationVariants[animation].item,
           }
         : { container: defaultContainerVariants, item: defaultItemVariants };
 
     return (
-        <AnimatePresence mode="popLayout">
-            <MotionComponent
-                variants={finalVariants.container as Variants}
-                initial="hidden"
-                whileInView={startOnView ? "show" : undefined}
-                animate={startOnView ? undefined : "show"}
-                exit="exit"
-                className={cn("whitespace-pre-wrap", className)}
-                viewport={{ once }}
-                {...props}
-            >
-                {segments.map((segment, i) => (
-                    <motion.span
-                        key={`${by}-${segment}-${i}`}
-                        variants={finalVariants.item}
-                        custom={i * staggerTimings[by]}
-                        className={cn(by === "line" ? "block" : "inline-block whitespace-pre", by === "character" && "", segmentClassName)}
-                    >
-                        {segment}
-                    </motion.span>
-                ))}
-            </MotionComponent>
-        </AnimatePresence>
+        <MotionComponent key={children} variants={finalVariants.container as Variants} initial="hidden" animate="show" className={cn("whitespace-pre-wrap", className)} {...props}>
+            {segments.map((segment, i) => (
+                <motion.span
+                    key={`${by}-${segment}-${i}-${children}`}
+                    variants={finalVariants.item}
+                    custom={i * staggerTimings[by]}
+                    className={cn(by === "line" ? "block" : "inline-block whitespace-pre", by === "character" && "", segmentClassName)}
+                >
+                    {segment}
+                </motion.span>
+            ))}
+        </MotionComponent>
     );
 };
 
 // Export the memoized version
-export const TextAnimate = memo(TextAnimateBase);
+export const TextAnimate2 = memo(TextAnimateBase);

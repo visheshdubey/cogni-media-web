@@ -7,11 +7,11 @@ import { CarouselIndicator } from "@/app/(www)/_comps/carousel-indicator";
 import Image from "next/image";
 import { TextGenerateEffect } from "@/components/ace-ui/text-generate-effect";
 import { Button } from "@/components/ui/button";
-import { TextAnimate } from "@/components/magicui/text-animate";
+import { TextAnimate2 } from "@/components/magicui/text-animate-2";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { slides } from "./carousel-data";
 
-export function HeroCarousel() {
+export function SectionHeroCarousel() {
     const plugin = React.useRef(
         Autoplay({
             delay: 4000,
@@ -77,14 +77,14 @@ export function HeroCarousel() {
             {/* Text Overlay */}
             <div className="absolute inset-0 w-full h-full flex items-center justify-start max-w-7xl mx-auto z-10">
                 <div className="text-start text-white w-full max-w-4xl px-4 md:px-6">
-                    <TextAnimate
+                    <TextAnimate2
                         animation="blurInUp"
                         duration={0.5}
                         as="h1"
                         className="text-4xl lg:text-5xl font-bricolage xl:text-7xl font-semibold mb-6 leading-tight text-white"
                     >
                         {slides[currentSlide].title}
-                    </TextAnimate>
+                    </TextAnimate2>
 
                     <TextGenerateEffect words={slides[currentSlide].description} className="md:text-xl leading-relaxed opacity-70 text-white" />
                     <Button className="mt-6 bg-white text-black hover:bg-white/90 w-60 h-[52px] font-semibold">Get in touch{" ->"}</Button>

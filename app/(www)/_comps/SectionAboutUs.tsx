@@ -1,0 +1,28 @@
+import AnimatedSectionTitle from "@/app/_comps/AnimatedSectionTitle";
+import SectionIconLabel from "@/app/_comps/SectionIconLabel";
+import { TextAnimate } from "@/components/magicui/text-animate";
+import { Rocket } from "lucide-react";
+import React from "react";
+
+const SectionAboutUs = () => {
+    return (
+        <div className="max-w-7xl mx-auto px-4 py-16">
+            <SectionIconLabel title="About Us">
+                <Rocket size={20} />
+            </SectionIconLabel>
+
+            <div className="flex w-full items-start justify-between mt-4">
+                <AnimatedSectionTitle className="w-1/2" animation="slideUp">
+                    Cognivision Digital media services is a future forward
+                </AnimatedSectionTitle>
+
+                <TextAnimate className="text-base font-inter-tight leading-relaxed text-neutral-900 w-1/2 max-w-xl tracking-wider" animation="slideUp" delay={0.5}>
+                    We are a next-gen digital media company blending creativity, technology, and AI to deliver high-impact content across industries like e-commerce, fashion,
+                    healthcare, and more.
+                </TextAnimate>
+            </div>
+        </div>
+    );
+};
+
+export default SectionAboutUs;
