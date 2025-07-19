@@ -1,0 +1,62 @@
+import React from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { AlignJustify } from "lucide-react";
+
+const NavHeader = () => {
+    return (
+        <header className="flex justify-between items-center p-4 fixed top-0 left-0 right-0 z-50 max-w-7xl mx-auto">
+            <div className="flex gap-2 items-center">
+                <div className="size-6 bg-blue-200 rounded-full"></div>
+                <h1 className="text-2xl font-bold text-white font-bricolage">CogniMedia</h1>
+            </div>
+            <nav className="hidden lg:block max-w-sm lg:max-w-md xl:max-w-lg w-full">
+                <ul className="flex gap-8 text-white/90 font-semibold text-sm items-center justify-between">
+                    <li>
+                        <Link href="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link href="/about">Services</Link>
+                    </li>
+                    <li>
+                        <Link href="/contact">Industries</Link>
+                    </li>
+                    <li>
+                        <Link href="/about">About</Link>
+                    </li>
+                </ul>
+            </nav>
+            <Button
+                variant="outline"
+                className="h-11 hidden lg:flex px-6 border-white/80 text-white/90 font-semibold text-sm bg-transparent hover:bg-brand-primary hover:text-white hover:border-brand-secondary"
+            >
+                <Link href="/login">Get in touch</Link>
+            </Button>
+
+            <Sheet>
+                <SheetTrigger className="lg:hidden">
+                    <AlignJustify className="text-white" />
+                </SheetTrigger>
+                <SheetContent className="bg-black/60 border-none [&>svg]:text-white pt-12">
+                    <ul className="flex flex-col gap-8 text-white/90 font-semibold text-2xl font-bricolage items-center justify-between">
+                        <li>
+                            <Link href="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link href="/about">Services</Link>
+                        </li>
+                        <li>
+                            <Link href="/contact">Industries</Link>
+                        </li>
+                        <li>
+                            <Link href="/about">About</Link>
+                        </li>
+                    </ul>
+                </SheetContent>
+            </Sheet>
+        </header>
+    );
+};
+
+export default NavHeader;
