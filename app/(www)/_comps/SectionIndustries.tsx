@@ -8,8 +8,8 @@ import IndustryTabContent from "./IndustryTabContent";
 
 const SectionIndustries = () => {
     return (
-        <section className="w-full px-4">
-            <div className="w-full max-w-7xl mx-auto bg-gradient-to-b from-brand-primary to-brand-secondary rounded-[64px] p-24">
+        <section className="w-full">
+            <div className="w-full max-w-7xl mx-auto bg-gradient-to-b from-brand-primary to-brand-secondary md:rounded-[64px] px-4 py-12 md:px-24 md:py-24">
                 <SectionIconLabel title="Next-Gen" className="[&>h3]:text-white [&>div]:size-fit">
                     <Rocket className="size-5 !text-white" />
                 </SectionIconLabel>
@@ -24,9 +24,9 @@ const SectionIndustries = () => {
                     </div>
                 </div>
 
-                <div className="flex w-full items-start justify-between mt-12 gap-12">
-                    <div className="w-1/2">
-                        <TextAnimate className="text-[28px]/[32px] font-semibold text-white" animation="slideUp">
+                <div className="flex flex-col md:flex-row w-full items-start justify-between mt-12 gap-4 md:gap-12">
+                    <div className="w-full md:w-1/2">
+                        <TextAnimate className="text-2xl md:text-[28px]/[32px] font-semibold text-white" animation="slideUp">
                             Video Post-production Services (VFX)
                         </TextAnimate>
 
@@ -35,7 +35,7 @@ const SectionIndustries = () => {
                         </TextAnimate>
                     </div>
 
-                    <div className="w-1/2">
+                    <div className="w-full md:w-1/2">
                         <TextAnimate
                             transition={{
                                 delay: 1,

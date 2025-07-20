@@ -133,13 +133,13 @@ const IndustryTabContent = () => {
     };
 
     return (
-        <div className="w-full mt-24 border-t flex border-[#66C2FF] min-h-[500px]">
-            <div className="w-1/3 border-r border-[#66C2FF] flex-1 flex-col flex">
+        <div className="w-full mt-16 md:mt-24 border-t flex flex-col md:flex-row border-[#66C2FF] min-h-[500px]">
+            <div className="w-full md:w-1/3 md:border-r border-[#66C2FF] flex-1 md:flex-col flex scrollbar-none overflow-x-auto md:overflow-x-hidden">
                 {industryTabsData.map((tab, index) => (
                     <button
                         key={index}
                         onClick={() => handleTabClick(index)}
-                        className={`text-start w-full px-4 py-5 font-semibold text-lg ${
+                        className={`text-start w-full px-4 py-5 font-semibold md:text-lg whitespace-nowrap md:border-0 border-r last:border-r-0 border-white/10 ${
                             activeTab === index ? "bg-gradient-to-r from-white/10 to-white/30 text-white" : "text-white"
                         }`}
                     >
@@ -147,8 +147,8 @@ const IndustryTabContent = () => {
                     </button>
                 ))}
             </div>
-            <div className="w-2/3 h-full py-5 px-4 flex flex-col">
-                <TextAnimate className="text-white text-2xl font-semibold">{industryTabsData[activeTab].title}</TextAnimate>
+            <div className="w-full md:w-2/3 h-full py-5 md:px-4 flex flex-col">
+                <TextAnimate className="text-white text-xl font-semibold">{industryTabsData[activeTab].title}</TextAnimate>
                 <div
                     className="text-base font-inter-tight leading-relaxed text-white/80 mt-4 w-full tracking-wider"
                     dangerouslySetInnerHTML={{ __html: industryTabsData[activeTab].content }}
