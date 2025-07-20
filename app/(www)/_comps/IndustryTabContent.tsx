@@ -133,7 +133,7 @@ const IndustryTabContent = () => {
     };
 
     return (
-        <div className="w-full mt-16 md:mt-24  border-t flex flex-col md:flex-row border-[#66C2FF]/50 min-h-[500px]">
+        <div className="w-full mt-16 md:mt-24  border-t flex flex-col md:flex-row border-[#66C2FF]/50 min-h-[500px] overflow-hidden">
             <div className="w-full md:w-1/3 md:border-r border-[#66C2FF]/50 md:border-b-0 border-b  flex-1 md:flex-col flex scrollbar-none overflow-x-auto md:overflow-x-hidden">
                 {industryTabsData.map((tab, index) => (
                     <button
