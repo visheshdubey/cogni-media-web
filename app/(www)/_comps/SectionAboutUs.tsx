@@ -7,7 +7,7 @@ import AboutUsCarousel from "./AboutUsCarousel";
 
 const SectionAboutUs = () => {
     return (
-        <section className="w-full bg-[url('/home/home-section-about-us-bg.jpg')] bg-cover bg-bottom-right md:bg-center">
+        <section className="w-full bg-[url('https://ik.imagekit.io/az5ky9e0s4/home/home-section-about-us-bg_rSBsUyj89t.jpg?updatedAt=1753014552595')] bg-cover bg-bottom-right md:bg-center">
             <div className="max-w-7xl mx-auto px-4 py-16 ">
                 <SectionIconLabel title="About Us">
                     <Rocket size={20} />

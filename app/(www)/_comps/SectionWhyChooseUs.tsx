@@ -9,7 +9,7 @@ import { WorldMap } from "@/components/ace-ui/world-map";
 
 const SectionWhyChooseUs = () => {
     return (
-        <section className="w-full mt-12 md:mt-24 md:h-[90vh] overflow-hidden md:min-h-[90vh] bg-[url('/home/home-section-why-choose-us-bg.jpg')] bg-cover bg-center bg-no-repeat flex">
+        <section className="w-full mt-12 md:mt-24 md:h-[90vh] overflow-hidden md:min-h-[90vh] bg-[url('https://ik.imagekit.io/az5ky9e0s4/home/home-section-why-choose-us-bg_llqhfSUhtn.jpg?updatedAt=1753014552650')] bg-cover bg-center bg-no-repeat flex">
             <div className="relative max-w-7xl mx-auto px-4 py-12 md:py-0 flex-col md:flex-row flex  h-full flex-1 items-center justify-between">
                 <div className="z-20 flex flex-col w-fit">
                     <SectionIconLabel title="Next-Gen Visuals">

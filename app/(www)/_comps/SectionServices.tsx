@@ -16,10 +16,22 @@ const SectionServices = () => {
                 Our Creative edge
             </AnimatedSectionTitle>
             <div className="relative mt-14 w-full">
-                <Image src="/home/home-section-services-1.jpg" alt="Services" width={1000} height={1000} className="w-full h-full object-cover" />
+                <Image
+                    src="https://ik.imagekit.io/az5ky9e0s4/home/home-section-services-1_0DRpaHjdTI.jpg?updatedAt=1753014552581"
+                    alt="Services"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                />
             </div>
             <div className="relative mt-4 w-full">
-                <Image src="/home/home-section-services-2.jpg" alt="Services" width={1000} height={1000} className="w-full h-full object-cover" />
+                <Image
+                    src="https://ik.imagekit.io/az5ky9e0s4/home/home-section-services-2_1q_pIRz8E.jpg?updatedAt=1753014552819"
+                    alt="Services"
+                    width={1000}
+                    height={1000}
+                    className="w-full h-full object-cover"
+                />
             </div>
 
             {/* <div className="flex flex-col md:flex-row w-full items-start justify-between mt-4">

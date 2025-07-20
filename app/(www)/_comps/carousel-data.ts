@@ -1,6 +1,6 @@
 export const slides = [
     {
-        resource: "/home/hero-slide-vid-1.mp4",
+        resource: "https://ik.imagekit.io/az5ky9e0s4/home/hero-slide-vid-1_qi-WqZlsM4.mp4?updatedAt=1753014557527",
         title: "Digital Media Asset Production & Management",
         description:
             "Create impactful visual content—videos, images, graphics, animations, and interactive media—that transforms ideas into compelling, brand-driven digital assets.",
@@ -9,7 +9,7 @@ export const slides = [
         type: "video",
     },
     {
-        resource: "/home/hero-slide-vid-2.mp4",
+        resource: "https://ik.imagekit.io/az5ky9e0s4/home/hero-slide-vid-3_WV--yg9Bl.mp4?updatedAt=1753014557203",
         title: "Creative Design Solutions",
         description: "Transform your brand with innovative design strategies that captivate audiences and drive meaningful engagement across all digital platforms.",
         indicatorLabel: "Core Value 2",
@@ -17,7 +17,7 @@ export const slides = [
         type: "video",
     },
     {
-        resource: "/home/hero-slide-vid-3.mp4",
+        resource: "https://ik.imagekit.io/az5ky9e0s4/home/hero-slide-vid-2_iVrGf207Ls.mp4?updatedAt=1753014556985",
         title: "Strategic Content Development",
         description: "Develop compelling narratives and strategic content that resonates with your target audience and achieves your business objectives.",
         indicatorLabel: "Core Value 3",
@@ -25,7 +25,7 @@ export const slides = [
         type: "video",
     },
     {
-        resource: "/home/hero-slide-vid-1.mp4",
+        resource: "https://ik.imagekit.io/az5ky9e0s4/home/hero-slide-vid-1_qi-WqZlsM4.mp4?updatedAt=1753014557527",
         title: "Brand Identity & Visual Communication",
         description: "Build powerful brand identities through thoughtful design, consistent messaging, and visual communication that leaves lasting impressions.",
         indicatorLabel: "Core Value 4",
