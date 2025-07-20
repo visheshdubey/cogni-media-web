@@ -9,7 +9,7 @@ import IndustryTabContent from "./IndustryTabContent";
 const SectionIndustries = () => {
     return (
         <section className="w-full">
-            <div className="w-full max-w-7xl mx-auto bg-gradient-to-b from-brand-primary to-brand-secondary md:rounded-[64px] px-4 py-12 md:px-24 md:py-24">
+            <div className="w-full max-w-7xl mx-auto bg-gradient-to-b from-brand-primary to-brand-secondary md:rounded-[52px] px-4 py-12 md:px-24 md:py-24">
                 <SectionIconLabel title="Next-Gen" className="[&>h3]:text-white [&>div]:size-fit">
                     <Rocket className="size-5 !text-white" />
                 </SectionIconLabel>
@@ -19,7 +19,7 @@ const SectionIndustries = () => {
                         Our Industry Footprint
                     </AnimatedSectionTitle>
 
-                    <div className="hidden md:block w-1/2 h-60 -mt-12">
+                    <div className="absolute md:relative w-1/2 h-40 md:h-60 md:-mt-12 right-4">
                         <AnimatedBuilding className="h-full" delay={0.5} />
                     </div>
                 </div>
