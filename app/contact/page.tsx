@@ -7,12 +7,12 @@ const ContactPage = () => {
     return (
         <main>
             <section className="relative w-full min-h-screen pt-32 md:pt-44">
-                <div className="absolute rotate-180 top-0 z-10 inset-x-0 bg-[url('/about-us/top-bg-pattern.jpg')] bg-cover bg-bottom w-full h-1/2"></div>
+                <div className="absolute rotate-180 top-0 z-10 inset-x-0 bg-[url('/home/home-section-about-us-bg.jpg')] bg-cover bg-bottom w-full h-full"></div>
                 <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-brand-secondary font-bricolage mx-auto w-fit">Contact Us</h1>
                 <div className="relative bg-white rounded-3xl mt-12 z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-0">
                     <ContentCard
                         icon={Rocket}
-                        iconTitle="About Us"
+                        iconTitle="Contact Us"
                         title="Shaping the Future with Visionary Media"
                         paragraphs={[
                             "Cognivision Media is a full-spectrum, technology-driven creative content production company, enabling the creation of holistic digital ecosystems that resonate with users on both functional and emotional levels.",
