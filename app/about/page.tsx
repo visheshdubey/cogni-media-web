@@ -11,10 +11,10 @@ import TrifectaItem from "@/components/ui/trifecta-item";
 const AboutPage = () => {
     return (
         <main>
-            <section className="relative w-full min-h-screen pt-44">
+            <section className="relative w-full min-h-screen pt-32 md:pt-44">
                 <div className="absolute rotate-180 top-0 z-10 inset-x-0 bg-[url('/about-us/top-bg-pattern.jpg')] bg-cover bg-bottom w-full h-1/2"></div>
-                <h1 className="relative z-20 text-6xl font-bold text-brand-secondary font-bricolage mx-auto w-fit">About us</h1>
-                <div className="relative z-20 max-w-7xl mx-auto px-4 pt-20 pb-10 flex items-center justify-between">
+                <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-brand-secondary font-bricolage mx-auto w-fit">About us</h1>
+                <div className="relative z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
                     <ContentCard
                         icon={Rocket}
                         iconTitle="About Us"
@@ -26,17 +26,17 @@ const AboutPage = () => {
                             'This understanding fuels our philosophy of "Emotive Immersion"—where every pixel, soundwave, and interaction is meticulously crafted to resonate with human emotion, dynamically adapt to its environment, and function as a living, evolving narrative.',
                         ]}
                     />
-                    <img src="https://placehold.co/400x500/EEE/31343C" alt="About" className="rounded-md" />
+                    <img src="https://placehold.co/400x500/EEE/31343C" alt="About" className="rounded-md w-full md:w-auto" />
                 </div>
             </section>
 
             <section className="w-full bg-bottom-right md:bg-center px-4">
-                <div className="max-w-7xl mx-auto px-4 py-16 ">
+                <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 ">
                     <SectionIconLabel title="Visionary Media">
                         <Rocket size={20} />
                     </SectionIconLabel>
 
-                    <div className="flex flex-col md:flex-row w-full items-start justify-between mt-4">
+                    <div className="flex flex-col md:flex-row w-full items-start justify-between mt-4 gap-4 md:gap-0">
                         <AnimatedSectionTitle className="w-full md:w-1/2" animation="slideUp">
                             Our Signature Philosophy
                         </AnimatedSectionTitle>
@@ -53,7 +53,7 @@ const AboutPage = () => {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto my-8 h-[90vh] min-h-[500px] rounded-xl overflow-hidden flex flex-col">
+                <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-xl overflow-hidden flex flex-col">
                     <HoverCard
                         backgroundImage="/about-us/our-values-1.jpg"
                         title="Crafting Multimedia That Feels Alive"
@@ -68,7 +68,7 @@ const AboutPage = () => {
             </section>
 
             <section className="w-full bg-bottom-right md:bg-center px-4">
-                <div className="max-w-7xl mx-auto px-4 py-16 bg-[url('/about-us/our-trifecta.jpg')] bg-cover bg-center">
+                <div className="max-w-7xl mx-auto px-4 py-8 md:py-16 bg-[url('/about-us/our-trifecta.jpg')] bg-cover bg-center">
                     <div className="flex flex-col w-full items-start justify-center text-center mt-4">
                         <AnimatedSectionTitle className="w-full" animation="slideUp">
                             Our Trifecta
@@ -90,7 +90,7 @@ const AboutPage = () => {
                         </TextAnimate>
                     </div>
 
-                    <div className="flex flex-col gap-4 max-w-sm mx-auto mt-8">
+                    <div className="flex flex-col gap-3 md:gap-4 max-w-sm mx-auto mt-6 md:mt-8">
                         <TrifectaItem highlightedText="Creativity" description="drives our storytelling" />
                         <TrifectaItem highlightedText="Technology" description="powers our delivery" />
                         <TrifectaItem highlightedText="Engagement" description="ensures our content resonates" />
@@ -99,8 +99,8 @@ const AboutPage = () => {
             </section>
 
             <section className="w-full md:bg-center px-4">
-                <div className="max-w-7xl mx-auto px-4 py-16">
-                    <div className="max-w-7xl mx-auto my-8 h-[90vh] min-h-[500px] rounded-xl overflow-hidden flex flex-col bg-[url('/about-us/our-values-2.jpg')] bg-cover bg-center">
+                <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
+                    <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-xl overflow-hidden flex flex-col bg-[url('/about-us/our-values-2.jpg')] bg-cover bg-center">
                         <HoverCard
                             backgroundImage=""
                             title="Our Values"
@@ -117,12 +117,12 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            <section className="w-full relative bg-gradient-to-b from-brand-primary to-brand-secondary h-fit min-h-[90vh] _overflow-hidden">
-                <div className="flex _items-center justify-between w-full h-full max-w-7xl mx-auto">
-                    <div className="w-1/2 flex items-center sticky top-1/2 h-60">
-                        <h2 className="text-2xl font-bold text-white font-bricolage">Our Values</h2>
+            <section className="w-full relative bg-gradient-to-b from-brand-primary to-brand-secondary h-fit min-h-[60vh] md:min-h-[90vh] _overflow-hidden">
+                <div className="flex flex-col md:flex-row _items-center justify-between w-full h-full max-w-7xl mx-auto px-4">
+                    <div className="w-full md:w-1/2 flex items-center sticky top-1/2 h-40 md:h-60 p-4 md:p-0">
+                        <h2 className="text-xl md:text-2xl font-bold text-white font-bricolage">Our Values</h2>
                     </div>
-                    <div className="w-1/2 relative flex flex-col gap-4 py-12">
+                    <div className="w-full md:w-1/2 relative flex flex-col gap-3 md:gap-4 py-6 md:py-12">
                         <NumberedCard number={1} />
                         <NumberedCard number={2} />
                         <NumberedCard number={3} />
@@ -133,7 +133,7 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            <div className="relative z-20 max-w-7xl mx-auto px-4 pt-20 pb-10 flex items-center justify-between">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
                 <ContentCard
                     icon={Rocket}
                     iconTitle="About Us"
@@ -145,7 +145,7 @@ const AboutPage = () => {
                         'This understanding fuels our philosophy of "Emotive Immersion"—where every pixel, soundwave, and interaction is meticulously crafted to resonate with human emotion, dynamically adapt to its environment, and function as a living, evolving narrative.',
                     ]}
                 />
-                <img src="https://placehold.co/400x500/EEE/31343C" alt="About" className="rounded-md" />
+                <img src="https://placehold.co/400x500/EEE/31343C" alt="About" className="rounded-md w-full md:w-auto" />
             </div>
         </main>
     );
