@@ -7,25 +7,59 @@ import { AlignJustify } from "lucide-react";
 
 const NavHeader = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isNotRootPath, setIsNotRootPath] = useState(false);
+
+    useEffect(() => {
+        // Check if we're not on the root path
+        const checkPath = () => {
+            setIsNotRootPath(window.location.pathname !== "/");
+        };
+
+        // Check on mount
+        checkPath();
+
+        // Listen for route changes
+        const handleRouteChange = () => {
+            checkPath();
+        };
+
+        window.addEventListener("popstate", handleRouteChange);
+
+        // For Next.js client-side navigation, we can also listen to the history API
+        const originalPushState = history.pushState;
+        history.pushState = function (...args) {
+            originalPushState.apply(history, args);
+            checkPath();
+        };
+
+        return () => {
+            window.removeEventListener("popstate", handleRouteChange);
+            history.pushState = originalPushState;
+        };
+    }, []);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             const viewportHeight = window.innerHeight;
 
-            if (scrollPosition > viewportHeight) {
+            // Show scrolled variant if not on root path OR if scrolled past viewport height
+            if (isNotRootPath || scrollPosition > viewportHeight) {
                 setIsScrolled(true);
             } else {
                 setIsScrolled(false);
             }
         };
 
+        // Initial check
+        handleScroll();
+
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    }, [isNotRootPath]);
 
     return (
-        <div className={`w-full fixed top-0 left-0 right-0 z-50 ${isScrolled ? "bg-white/80 backdrop-blur-sm shadow-lg/5" : "bg-transparent"}`}>
+        <div className={`w-full fixed top-0 left-0 right-0 z-50 ${isScrolled ? "bg-white/80 backdrop-blur-sm _shadow-lg/5" : "bg-transparent"}`}>
             <header className={`flex justify-between items-center p-4  max-w-7xl mx-auto transition-all duration-300 `}>
                 <div className="flex gap-2 items-center">
                     <div className={`size-6 rounded-full transition-colors duration-300 ${isScrolled ? "bg-blue-400" : "bg-blue-200"}`}></div>
@@ -40,17 +74,22 @@ const NavHeader = () => {
                         </li>
                         <li>
                             <Link href="/about" className={`transition-colors duration-300 hover:opacity-80 ${isScrolled ? "text-black" : "text-white/90"}`}>
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/services" className={`transition-colors duration-300 hover:opacity-80 ${isScrolled ? "text-black" : "text-white/90"}`}>
                                 Services
                             </Link>
                         </li>
                         <li>
                             <Link href="/contact" className={`transition-colors duration-300 hover:opacity-80 ${isScrolled ? "text-black" : "text-white/90"}`}>
-                                Industries
+                                Contact
                             </Link>
                         </li>
                         <li>
-                            <Link href="/about" className={`transition-colors duration-300 hover:opacity-80 ${isScrolled ? "text-black" : "text-white/90"}`}>
-                                About
+                            <Link href="/careers" className={`transition-colors duration-300 hover:opacity-80 ${isScrolled ? "text-black" : "text-white/90"}`}>
+                                Careers
                             </Link>
                         </li>
                     </ul>
@@ -76,13 +115,16 @@ const NavHeader = () => {
                                 <Link href="/">Home</Link>
                             </li>
                             <li>
-                                <Link href="/about">Services</Link>
-                            </li>
-                            <li>
-                                <Link href="/contact">Industries</Link>
-                            </li>
-                            <li>
                                 <Link href="/about">About</Link>
+                            </li>
+                            <li>
+                                <Link href="/services">Services</Link>
+                            </li>
+                            <li>
+                                <Link href="/contact">Contact</Link>
+                            </li>
+                            <li>
+                                <Link href="/careers">Careers</Link>
                             </li>
                         </ul>
                     </SheetContent>

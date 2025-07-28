@@ -5,7 +5,7 @@ import React from "react";
 
 const SectionGetInTouch = () => {
     return (
-        <section className="max-w-7xl mx-auto px-4 py-12 md:px-12 md:py-12 bg-brand-primary my-8 md:my-12 md:rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
+        <section className="max-w-7xl w-full mx-4 px-4 py-12 md:px-12 md:py-12 bg-brand-primary my-8 md:my-12 md:rounded-3xl flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
             <div className="flex flex-col w-full md:w-1/2">
                 <AnimatedSectionTitle className="text-4xl md:text-5xl text-white" animation="slideUp">
                     Let’s
