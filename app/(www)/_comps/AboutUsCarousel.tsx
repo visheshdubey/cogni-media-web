@@ -1,10 +1,9 @@
 "use client";
+
 import { cn } from "@/lib/utils";
 import * as React from "react";
 import Autoplay from "embla-carousel-autoplay";
-
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
-import { CarouselIndicator } from "@/app/(www)/_comps/carousel-indicator";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { Rocket, ChevronLeft, ChevronRight } from "lucide-react";
 
 const AboutUsCarousel = ({ className }: { className?: string }) => {
@@ -46,7 +45,7 @@ const AboutUsCarousel = ({ className }: { className?: string }) => {
                 className="w-full"
                 plugins={[plugin.current]}
                 opts={{
-                    align: "start",
+                    align: "center",
                     loop: true,
                     startIndex: 0,
                 }}
