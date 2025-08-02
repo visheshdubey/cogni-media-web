@@ -17,12 +17,20 @@ interface UseIsMobileReturn {
 
 /**
  * React hook to detect mobile devices and screen dimensions
+ * Uses Tailwind CSS default breakpoints:
+ * - sm: 640px
+ * - md: 768px (default mobile breakpoint)
+ * - lg: 1024px (tablet breakpoint)
+ * - xl: 1280px
+ * - 2xl: 1536px
+ *
  * @param options - Configuration options for the hook
- * @param options.breakpoint - Custom breakpoint in pixels (default: 768)
+ * @param options.breakpoint - Custom breakpoint in pixels (default: 768px to match Tailwind's md breakpoint)
  * @param options.includeTablet - Whether to include tablets in mobile detection (default: true)
  * @returns Object containing device type flags and screen dimensions
  */
 export function useIsMobile(options: UseIsMobileOptions = {}): UseIsMobileReturn {
+    // Default to Tailwind's md breakpoint (768px)
     const { breakpoint = 768, includeTablet = true } = options;
 
     const [screenWidth, setScreenWidth] = useState<number>(0);
@@ -47,10 +55,13 @@ export function useIsMobile(options: UseIsMobileOptions = {}): UseIsMobileReturn
         };
     }, []);
 
-    // Calculate device types based on screen width
+    // Calculate device types based on screen width using Tailwind breakpoints
+    // Mobile: <= 768px (md breakpoint)
     const isMobile = screenWidth <= breakpoint;
-    const isTablet = screenWidth > breakpoint && screenWidth <= 1024;
-    const isDesktop = screenWidth > 1024;
+    // Tablet: > 768px and < 1024px (between md and lg breakpoints)
+    const isTablet = screenWidth > breakpoint && screenWidth < 1024;
+    // Desktop: >= 1024px (lg breakpoint and above)
+    const isDesktop = screenWidth >= 1024;
 
     // Return mobile status based on includeTablet option
     const mobileStatus = includeTablet ? isMobile || isTablet : isMobile;
@@ -66,7 +77,9 @@ export function useIsMobile(options: UseIsMobileOptions = {}): UseIsMobileReturn
 
 /**
  * Simplified hook that only returns mobile status
- * @param breakpoint - Custom breakpoint in pixels (default: 768)
+ * Uses Tailwind's md breakpoint (768px) by default
+ *
+ * @param breakpoint - Custom breakpoint in pixels (default: 768px to match Tailwind's md breakpoint)
  * @returns Boolean indicating if device is mobile
  */
 export function useIsMobileSimple(breakpoint: number = 768): boolean {
