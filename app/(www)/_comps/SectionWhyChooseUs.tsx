@@ -19,9 +19,9 @@ const SectionWhyChooseUs = () => {
                         Why choose us?
                     </AnimatedSectionTitle>
 
-                    <TextAnimate className="text-base font-inter-tight mt-4 leading-relaxed text-neutral-900 w-full max-w-xl tracking-wider" animation="slideUp" delay={0.5}>
+                    <p className="text-base font-inter-tight mt-4 leading-relaxed text-neutral-900 w-full max-w-xl tracking-wider">
                         From enterprise software and AI-powered cloud engineering to creative and content production and DAM.
-                    </TextAnimate>
+                    </p>
 
                     <Button className="mt-8 md:mt-12 bg-brand-primary text-white hover:bg-brand-primary/90 w-60 h-[52px] font-semibold">Get in touch{" ->"}</Button>
                 </div>

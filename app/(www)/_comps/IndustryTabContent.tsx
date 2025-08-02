@@ -148,7 +148,7 @@ const IndustryTabContent = () => {
                 ))}
             </div>
             <div className="w-full md:w-2/3 h-full py-5 md:px-4 flex flex-col">
-                <TextAnimate className="text-white text-xl font-semibold">{industryTabsData[activeTab].title}</TextAnimate>
+                <h3 className="text-white text-xl font-semibold">{industryTabsData[activeTab].title}</h3>
                 <div
                     className="text-base font-inter-tight leading-relaxed text-white/80 mt-4 w-full tracking-wider"
                     dangerouslySetInnerHTML={{ __html: industryTabsData[activeTab].content }}

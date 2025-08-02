@@ -18,14 +18,10 @@ const SectionAboutUs = () => {
                         Cognivision Digital media services is a future forward
                     </AnimatedSectionTitle>
 
-                    <TextAnimate
-                        className="text-base font-inter-tight mt-4 md:mt-0 leading-relaxed text-neutral-900 w-full md:w-1/2 max-w-xl tracking-wider"
-                        animation="slideUp"
-                        delay={0.5}
-                    >
+                    <p className="text-base font-inter-tight mt-4 md:mt-0 leading-relaxed text-neutral-900 w-full md:w-1/2 max-w-xl tracking-wider">
                         We are a next-gen digital media company blending creativity, technology, and AI to deliver high-impact content across industries like e-commerce, fashion,
                         healthcare, and more.
-                    </TextAnimate>
+                    </p>
                 </div>
 
                 <AboutUsCarousel className="mt-12 md:mt-24" />
