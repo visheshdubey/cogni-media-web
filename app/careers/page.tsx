@@ -1,12 +1,6 @@
 import React from "react";
-import AnimatedSectionTitle from "../_comps/AnimatedSectionTitle";
-import SectionIconLabel from "../_comps/SectionIconLabel";
 import { Rocket } from "lucide-react";
-import { TextAnimate } from "@/components/magicui/text-animate";
-import HoverCard from "@/components/ui/hover-card";
-import NumberedCard from "@/components/ui/numbered-card";
 import ContentCard from "@/components/ui/content-card";
-import TrifectaItem from "@/components/ui/trifecta-item";
 import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {

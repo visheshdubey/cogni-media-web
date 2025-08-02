@@ -1,6 +1,5 @@
 import AnimatedSectionTitle from "@/app/_comps/AnimatedSectionTitle";
 import SectionIconLabel from "@/app/_comps/SectionIconLabel";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Button } from "@/components/ui/button";
 import { Rocket } from "lucide-react";
 import React from "react";

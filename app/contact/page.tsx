@@ -1,5 +1,5 @@
 import React from "react";
-import { Rocket, Mail, MapPin, Phone, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Rocket } from "lucide-react";
 import ContentCard from "@/components/ui/content-card";
 import { ContactForm } from "@/components/ui/contact-form";
 

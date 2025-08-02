@@ -1,6 +1,5 @@
 import AnimatedSectionTitle from "@/app/_comps/AnimatedSectionTitle";
 import SectionIconLabel from "@/app/_comps/SectionIconLabel";
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Rocket } from "lucide-react";
 import React from "react";
 import AboutUsCarousel from "./AboutUsCarousel";

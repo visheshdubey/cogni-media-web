@@ -7,6 +7,7 @@ import HoverCard from "@/components/ui/hover-card";
 import NumberedCard from "@/components/ui/numbered-card";
 import ContentCard from "@/components/ui/content-card";
 import TrifectaItem from "@/components/ui/trifecta-item";
+import Image from "next/image";
 
 const AboutPage = () => {
     return (
@@ -26,7 +27,7 @@ const AboutPage = () => {
                             'This understanding fuels our philosophy of "Emotive Immersion"—where every pixel, soundwave, and interaction is meticulously crafted to resonate with human emotion, dynamically adapt to its environment, and function as a living, evolving narrative.',
                         ]}
                     />
-                    <img src="https://placehold.co/400x500/EEE/31343C" alt="About" className="rounded-md w-full md:w-auto" />
+                    <Image src="https://placehold.co/400x500/EEE/31343C" alt="About" width={400} height={500} className="rounded-md w-full md:w-auto" />
                 </div>
             </section>
 
@@ -145,7 +146,7 @@ const AboutPage = () => {
                         'This understanding fuels our philosophy of "Emotive Immersion"—where every pixel, soundwave, and interaction is meticulously crafted to resonate with human emotion, dynamically adapt to its environment, and function as a living, evolving narrative.',
                     ]}
                 />
-                <img src="https://placehold.co/400x500/EEE/31343C" alt="About" className="rounded-md w-full md:w-auto" />
+                <Image src="https://placehold.co/400x500/EEE/31343C" alt="About" width={400} height={500} className="rounded-md w-full md:w-auto" />
             </div>
         </main>
     );

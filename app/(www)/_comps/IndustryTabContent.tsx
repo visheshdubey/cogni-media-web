@@ -1,6 +1,5 @@
 "use client";
 
-import { TextAnimate } from "@/components/magicui/text-animate";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useIsMobile } from "@/lib/use-is-mobile";
 import React, { useState } from "react";

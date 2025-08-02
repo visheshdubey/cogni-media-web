@@ -230,8 +230,6 @@ const TextAnimateBase = ({
     className,
     segmentClassName,
     as: Component = "p",
-    startOnView = true,
-    once = false,
     by = "word",
     animation = "fadeIn",
     ...props
