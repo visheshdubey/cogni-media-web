@@ -1,6 +1,8 @@
 "use client";
 
 import { TextAnimate } from "@/components/magicui/text-animate";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useIsMobile } from "@/lib/use-is-mobile";
 import React, { useState } from "react";
 
 // Tab data extracted to the top of the component
@@ -126,6 +128,36 @@ const industryTabsData = [
 ];
 
 const IndustryTabContent = () => {
+    const { isMobile } = useIsMobile({ breakpoint: 768, includeTablet: true });
+
+    if (isMobile) {
+        return <IndustryTabContentMobile />;
+    }
+
+    return <IndustryTabContentDesktop />;
+};
+
+const IndustryTabContentMobile = () => {
+    return (
+        <div className="w-full mt-16 md:mt-24 border-t border-[#66C2FF]/50">
+            <Accordion type="single" collapsible className="w-full">
+                {industryTabsData.map((tab, index) => (
+                    <AccordionItem key={index} value={`item-${index}`} className="border-[#66C2FF]/50">
+                        <AccordionTrigger className="text-white hover:text-white/80 text-left font-semibold text-lg py-4 hover:no-underline [&>svg]:text-white">
+                            {tab.tabTitle}
+                        </AccordionTrigger>
+                        <AccordionContent className="pb-5">
+                            {/* <h3 className="text-white text-xl font-semibold mb-4">{tab.title}</h3> */}
+                            <div className="text-base font-inter-tight leading-relaxed text-white/80 tracking-wider" dangerouslySetInnerHTML={{ __html: tab.content }} />
+                        </AccordionContent>
+                    </AccordionItem>
+                ))}
+            </Accordion>
+        </div>
+    );
+};
+
+const IndustryTabContentDesktop = () => {
     const [activeTab, setActiveTab] = useState(0);
 
     const handleTabClick = (index: number) => {
