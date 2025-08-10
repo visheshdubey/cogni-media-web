@@ -62,15 +62,16 @@ const ServiceListPage = () => {
     ];
     return (
         <main className="flex flex-col items-center justify-center min-h-screen">
-            <section className="relative w-full min-h-fit pt-32 md:pt-44 pb-12">
+            <ServicesHeroCarousel />
+            {/* <section className="relative w-full min-h-fit pt-32 md:pt-44 pb-12">
                 <div className="absolute rotate-180 top-0 z-10 inset-x-0 bg-[url('/home/home-section-about-us-bg.jpg')] bg-cover bg-bottom w-full h-full"></div>
-                <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-brand-secondary font-bricolage mx-auto w-fit">Services</h1>
+                <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-white font-bricolage mx-auto w-fit">Services</h1>
                 <div className="relative z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20 flex flex-col md:flex-row items-start justify-between gap-8 md:gap-0">
-                    <ServicesHeroCarousel />
+                    
                 </div>
-            </section>
+            </section> */}
 
-            <section className="bg-[#5bb4ff]/20 w-full">
+            {/* <section className="bg-[#5bb4ff]/20 w-full">
                 <div className="relative z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0">
                     <ContentCard
                         icon={Rocket}
@@ -85,7 +86,7 @@ const ServiceListPage = () => {
                     />
                     <Image src="https://placehold.co/400x500.png" alt="About" width={400} height={500} className="rounded-md w-full md:w-auto" />
                 </div>
-            </section>
+            </section> */}
 
             <section className="w-full">
                 <div className="relative z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20 pb-10 flex flex-col">
