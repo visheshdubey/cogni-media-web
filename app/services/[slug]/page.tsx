@@ -107,7 +107,7 @@ const ServicesDetailPage: React.FC<PageProps> = async ({ params }) => {
             {/* Top banner: reuse Services page gradient + title style */}
             <section className="relative w-full min-h-fit pt-32 md:pt-44 pb-12">
                 <div className="absolute rotate-180 top-0 z-10 inset-x-0 bg-[url('/home/home-section-about-us-bg.jpg')] bg-cover bg-bottom w-full h-full" />
-                <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-brand-secondary font-bricolage mx-auto w-fit">{data.pageTitle}</h1>
+                <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-brand-secondary font-bricolage mx-auto w-fit px-4">{data.pageTitle}</h1>
                 <div className="relative z-20 max-w-7xl mx-auto px-4 pt-12 md:pt-20" />
             </section>
 
