@@ -3,10 +3,10 @@ import AnimatedSectionTitle from "../_comps/AnimatedSectionTitle";
 import SectionIconLabel from "../_comps/SectionIconLabel";
 import { Rocket } from "lucide-react";
 import { TextAnimate } from "@/components/magicui/text-animate";
-import HoverCard from "@/components/ui/hover-card";
-import NumberedCard from "@/components/ui/numbered-card";
-import ContentCard from "@/components/ui/content-card";
-import TrifectaItem from "@/components/ui/trifecta-item";
+import HoverCard from "@/app/about/_comps/hover-card";
+import NumberedCard from "@/app/about/_comps/numbered-card";
+import ContentCard from "@/app/_comps/content-card";
+import TrifectaItem from "@/app/about/_comps/trifecta-item";
 import Image from "next/image";
 
 const AboutPage = () => {

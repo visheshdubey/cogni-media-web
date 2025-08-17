@@ -1,7 +1,7 @@
 import React from "react";
 import { Rocket } from "lucide-react";
-import ContentCard from "@/components/ui/content-card";
-import { ContactForm } from "@/components/ui/contact-form";
+import ContentCard from "@/app/_comps/content-card";
+import { ContactForm } from "@/app/contact/_comps/contact-form";
 
 const ContactPage = () => {
     return (

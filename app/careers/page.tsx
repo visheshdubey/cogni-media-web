@@ -1,6 +1,6 @@
 import React from "react";
 import { Rocket } from "lucide-react";
-import ContentCard from "@/components/ui/content-card";
+import ContentCard from "@/app/_comps/content-card";
 import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {
