@@ -27,7 +27,7 @@ const AboutPage = () => {
                             'This understanding fuels our philosophy of "Emotive Immersion"—where every pixel, soundwave, and interaction is meticulously crafted to resonate with human emotion, dynamically adapt to its environment, and function as a living, evolving narrative.',
                         ]}
                     />
-                    <Image src="https://placehold.co/400x500.png" alt="About" width={400} height={500} className="rounded-md w-full md:w-auto" />
+                    <Image src="https://placehold.co/400x500.png" alt="About" width={400} height={500} className="rounded-2xl w-full md:w-auto" />
                 </div>
             </section>
 
@@ -54,7 +54,7 @@ const AboutPage = () => {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-xl overflow-hidden flex flex-col">
+                <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden flex flex-col">
                     <HoverCard
                         backgroundImage="/about-us/our-values-1.jpg"
                         title="Crafting Multimedia That Feels Alive"
@@ -101,7 +101,7 @@ const AboutPage = () => {
 
             <section className="w-full md:bg-center px-4">
                 <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
-                    <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-xl overflow-hidden flex flex-col bg-[url('/about-us/our-values-2.jpg')] bg-cover bg-center">
+                    <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden flex flex-col bg-[url('/about-us/our-values-2.jpg')] bg-cover bg-center">
                         <HoverCard
                             backgroundImage=""
                             title="Our Values"
@@ -146,7 +146,7 @@ const AboutPage = () => {
                         'This understanding fuels our philosophy of "Emotive Immersion"—where every pixel, soundwave, and interaction is meticulously crafted to resonate with human emotion, dynamically adapt to its environment, and function as a living, evolving narrative.',
                     ]}
                 />
-                <Image src="https://placehold.co/400x500.png" alt="About" width={400} height={500} className="rounded-md w-full md:w-auto" />
+                <Image src="https://placehold.co/400x500.png" alt="About" width={400} height={500} className="rounded-2xl w-full md:w-auto" />
             </div>
         </main>
     );

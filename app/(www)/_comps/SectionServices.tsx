@@ -2,7 +2,7 @@ import AnimatedSectionTitle from "@/app/_comps/AnimatedSectionTitle";
 import SectionIconLabel from "@/app/_comps/SectionIconLabel";
 import { Rocket } from "lucide-react";
 import React from "react";
-import Image from "next/image";
+
 import { SlideUpInView } from "@/components/magicui/slide-up-in-view";
 import ServiceOverlayStackCard from "./ServiceOverlayStackCard";
 

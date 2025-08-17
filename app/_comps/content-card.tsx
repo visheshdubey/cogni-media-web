@@ -13,7 +13,7 @@ interface ContentCardProps {
 
 const ContentCard: React.FC<ContentCardProps> = ({ icon: Icon, iconTitle, title, paragraphs, className = "" }) => {
     return (
-        <div className={`group w-full md:w-1/2 bg-white rounded-md p-4 md:p-8 ${className}`}>
+        <div className={`group w-full md:w-1/2 bg-white rounded-2xl p-4 md:p-8 ${className}`}>
             <SectionIconLabel title={iconTitle}>
                 <Icon size={20} />
             </SectionIconLabel>

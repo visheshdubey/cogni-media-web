@@ -6,11 +6,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Image from "next/image";
 import { slides } from "@/app/(www)/_comps/carousel-data";
 
-type ServicesHeroCarouselProps = {
-    className?: string;
-};
-
-const ServicesHeroCarousel = (props: ServicesHeroCarouselProps) => {
+const ServicesHeroCarousel = () => {
     const plugin = React.useRef(
         Autoplay({
             delay: 4000,

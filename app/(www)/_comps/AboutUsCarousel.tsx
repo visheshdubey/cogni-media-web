@@ -86,14 +86,14 @@ const AboutUsCarousel = ({ className }: { className?: string }) => {
                 <div className="justify-center flex items-center gap-4 ml-auto md:mr-4">
                     <button
                         onClick={scrollPrev}
-                        className="size-10 md:size-12 border-0  bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-md flex items-center justify-center transition-all duration-300"
+                        className="size-10 md:size-12 border-0  bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-2xl flex items-center justify-center transition-all duration-300"
                         aria-label="Previous slide"
                     >
                         <ChevronLeft className="size-5 text-brand-primary" />
                     </button>
                     <button
                         onClick={scrollNext}
-                        className="size-10 md:size-12 border-0 bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-md flex items-center justify-center transition-all duration-300"
+                        className="size-10 md:size-12 border-0 bg-white/40 backdrop-blur-2xl hover:bg-white/70 text-brand-primary rounded-2xl flex items-center justify-center transition-all duration-300"
                         aria-label="Next slide"
                     >
                         <ChevronRight className="size-5 text-brand-primary" />
