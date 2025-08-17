@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useEffect, useMemo, useState } from "react";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
-import { Check } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Compare } from "@/components/ace-ui/compare";
+import { Button } from "@/components/ui/button";
 
 type Slide = {
     imageSrcA: string;
@@ -40,6 +41,14 @@ export const ServiceDetailSection: React.FC<ServiceDetailSectionProps> = ({ sect
         };
     }, [api]);
 
+    const scrollPrev = React.useCallback(() => {
+        if (api) api.scrollPrev();
+    }, [api]);
+
+    const scrollNext = React.useCallback(() => {
+        if (api) api.scrollNext();
+    }, [api]);
+
     const activeSlide = useMemo(() => section.slides[selectedIndex] ?? section.slides[0], [section.slides, selectedIndex]);
 
     return (
@@ -58,7 +67,11 @@ export const ServiceDetailSection: React.FC<ServiceDetailSectionProps> = ({ sect
                 {/* Slider 80% */}
                 <div className="w-4/5">
                     <div className="relative">
-                        <Carousel setApi={setApi} className="w-full" opts={{ align: "start", loop: false }}>
+                        <Carousel
+                            setApi={setApi}
+                            className="w-full"
+                            opts={{ align: "center", loop: true, dragFree: false, containScroll: "trimSnaps", skipSnaps: true, inViewThreshold: 0.7, watchDrag: false }}
+                        >
                             <CarouselContent>
                                 {section.slides.map((slide, i) => (
                                     <CarouselItem key={`${section.title}-slide-${i}`}>
@@ -69,14 +82,29 @@ export const ServiceDetailSection: React.FC<ServiceDetailSectionProps> = ({ sect
                                                 firstImageClassName="object-cover object-left-top"
                                                 secondImageClassname="object-cover object-left-top"
                                                 className="h-full w-full"
-                                                slideMode="hover"
+                                                slideMode="drag"
                                             />
                                         </div>
                                     </CarouselItem>
                                 ))}
                             </CarouselContent>
-                            <CarouselPrevious className="-left-4 md:-left-12 bg-white/80 backdrop-blur" />
-                            <CarouselNext className="-right-4 md:-right-12 bg-white/80 backdrop-blur" />
+
+                            <div className="absolute bottom-0 right-4 z-40 flex gap-4 w-1/2 h-16 justify-end">
+                                <Button
+                                    onClick={scrollPrev}
+                                    className="bg-white/20 hover:bg-white/30 text-white border-white/30 hover:border-white/50 rounded-full w-12 h-12 p-0"
+                                    size="icon"
+                                >
+                                    <ChevronLeft className="h-6 w-6" />
+                                </Button>
+                                <Button
+                                    onClick={scrollNext}
+                                    className="bg-white/20 hover:bg-white/30 text-white border-white/30 hover:border-white/50 rounded-full w-12 h-12 p-0"
+                                    size="icon"
+                                >
+                                    <ChevronRight className="h-6 w-6" />
+                                </Button>
+                            </div>
                         </Carousel>
                     </div>
                 </div>

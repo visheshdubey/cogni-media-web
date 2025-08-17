@@ -101,18 +101,16 @@ const AboutPage = () => {
 
             <section className="w-full md:bg-center px-4">
                 <div className="max-w-7xl mx-auto px-4 py-8 md:py-16">
-                    <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden flex flex-col bg-[url('/about-us/our-values-2.jpg')] bg-cover bg-center">
+                    <div className="max-w-7xl mx-auto my-4 md:my-8 h-[60vh] md:h-[90vh] min-h-[400px] md:min-h-[500px] rounded-2xl overflow-hidden flex flex-col">
                         <HoverCard
-                            backgroundImage=""
+                            backgroundImage="https://placehold.co/1200x400/bbb/fff"
                             title="Our Values"
                             description="Cognivision Media is a full-spectrum, technology-driven creative content production company, enabling the creation of holistic digital ecosystems that resonate with users on both functional and emotional levels."
-                            className="bg-blue-500/90"
                         />
                         <HoverCard
-                            backgroundImage=""
+                            backgroundImage="https://placehold.co/1200x400/bbb/fff"
                             title="Our Values"
                             description="Cognivision Media is a full-spectrum, technology-driven creative content production company, enabling the creation of holistic digital ecosystems that resonate with users on both functional and emotional levels."
-                            className="bg-blue-900/90"
                         />
                     </div>
                 </div>
@@ -120,16 +118,24 @@ const AboutPage = () => {
 
             <section className="w-full relative bg-gradient-to-b from-brand-primary to-brand-secondary h-fit min-h-[60vh] md:min-h-[90vh] _overflow-hidden">
                 <div className="flex flex-col md:flex-row _items-center justify-between w-full h-full max-w-7xl mx-auto px-4">
-                    <div className="w-full md:w-1/2 flex items-center sticky top-1/2 h-40 md:h-60 p-4 md:p-0">
-                        <h2 className="text-xl md:text-2xl font-bold text-white font-bricolage">Our Values</h2>
+                    <div className="w-full md:w-1/2 flex md:sticky top-1/2 md:h-60 p-4 md:p-0 md:py-8 flex-col mt-12 md:mt-0">
+                        <AnimatedSectionTitle className="w-full text-white" animation="slideUp">
+                            Our Values
+                        </AnimatedSectionTitle>
+                        <p className="text-base font-inter-tight mt-4 leading-relaxed text-white w-full max-w-2xl mx-auto tracking-wider">The Foundation of Our Success</p>
                     </div>
                     <div className="w-full md:w-1/2 relative flex flex-col gap-3 md:gap-4 py-6 md:py-12">
-                        <NumberedCard number={1} />
-                        <NumberedCard number={2} />
-                        <NumberedCard number={3} />
-                        <NumberedCard number={4} />
-                        <NumberedCard number={5} />
-                        <NumberedCard number={6} />
+                        {Array.from({ length: 6 }).map((_, index) => (
+                            <NumberedCard key={index} number={index + 1} className="h-fit">
+                                <div className="flex flex-col p-6">
+                                    <h3 className="text-xl md:text-2xl font-bold text-brand-secondary font-bricolage">Customer Commitment</h3>
+                                    <p className="text-base font-inter-tight mt-4 leading-relaxed text-neutral-600 w-full max-w-2xl mx-auto tracking-wider">
+                                        We place client satisfaction at the core of every engagement. Our relationship-first philosophy ensures personalized service, collaborative
+                                        development, and outstanding results.
+                                    </p>
+                                </div>
+                            </NumberedCard>
+                        ))}
                     </div>
                 </div>
             </section>
