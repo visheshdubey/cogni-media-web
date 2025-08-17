@@ -55,26 +55,26 @@ export function ContactForm() {
     }
 
     return (
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-            <div className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-12">
+            <div className="space-y-10">
                 {/* Name Field */}
                 <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
-                    <Input id="name" placeholder="Enter your name" {...form.register("name")} className="w-full" />
+                    <Input id="name" placeholder="Enter your name" {...form.register("name")} className="w-full h-10" />
                     {form.formState.errors.name && <p className="text-sm text-red-500">{form.formState.errors.name.message}</p>}
                 </div>
 
                 {/* Email and Phone Row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="Enter your email" {...form.register("email")} className="w-full" />
+                        <Input id="email" type="email" placeholder="Enter your email" {...form.register("email")} className="w-full h-10" />
                         {form.formState.errors.email && <p className="text-sm text-red-500">{form.formState.errors.email.message}</p>}
                     </div>
 
                     <div className="space-y-2">
                         <Label htmlFor="phone">Phone Number</Label>
-                        <Input id="phone" type="tel" placeholder="Enter your phone number" {...form.register("phone")} className="w-full" />
+                        <Input id="phone" type="tel" placeholder="Enter your phone number" {...form.register("phone")} className="w-full h-10" />
                         {form.formState.errors.phone && <p className="text-sm text-red-500">{form.formState.errors.phone.message}</p>}
                     </div>
                 </div>
@@ -89,7 +89,7 @@ export function ContactForm() {
                         }}
                         value={form.watch("inquiry")}
                     >
-                        <SelectTrigger className="w-full">
+                        <SelectTrigger className="w-full h-10">
                             <SelectValue placeholder="Select an inquiry type" />
                         </SelectTrigger>
                         <SelectContent>
@@ -106,13 +106,13 @@ export function ContactForm() {
                 {/* Message Field */}
                 <div className="space-y-2">
                     <Label htmlFor="message">Message (Optional)</Label>
-                    <Textarea id="message" placeholder="Tell us more about your inquiry..." {...form.register("message")} className="w-full h-24" />
+                    <Textarea id="message" placeholder="Tell us more about your inquiry..." {...form.register("message")} className="w-full h-10" />
                     {form.formState.errors.message && <p className="text-sm text-red-500">{form.formState.errors.message.message}</p>}
                 </div>
             </div>
 
             {/* Submit Button */}
-            <Button type="submit" className="w-full bg-brand-secondary hover:bg-brand-secondary/90 text-white" disabled={isSubmitting}>
+            <Button type="submit" className="w-full h-10 bg-brand-secondary hover:bg-brand-secondary/90 text-white" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
         </form>
