@@ -9,7 +9,7 @@ import { useMediaQuery } from "@/lib/use-media-query";
 export function WhyChooseUsCarousel() {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
-    return <div className="relative h-full w-full max-w-sm md:max-w-md z-20">{isMobile ? <HorizontalCarousel /> : <VerticalCarousel />}</div>;
+    return <div className="relative h-full w-full max-w-md md:max-w-md z-20">{isMobile ? <HorizontalCarousel /> : <VerticalCarousel />}</div>;
 }
 
 const VerticalCarousel = () => {
@@ -62,9 +62,9 @@ const HorizontalCarousel = () => {
                 }),
             ]}
         >
-            <CarouselContent className="gap-2 px-4 py-8 h-full w-full">
+            <CarouselContent className="gap-2  py-8 h-full w-full">
                 {Array.from({ length: 20 }).map((_, index) => (
-                    <CarouselItem key={index} className="pt-1 basis-1/4">
+                    <CarouselItem key={index} className="pt-1 basis-full">
                         <div className="p-4 md:p-8 rounded-3xl border-4 border-brand-primary/10 flex flex-col bg-white shadow-lg">
                             <div className="flex items-center p-[18px] w-fit h-fit bg-brand-primary/10 rounded-lg justify-center [&>svg]:text-brand-primary">
                                 <Rocket className="size-6" />

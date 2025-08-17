@@ -15,7 +15,7 @@ const ServicesHeroCarousel = () => {
     );
 
     return (
-        <div className="relative aspect-[3] overflow-hidden z-10">
+        <div className="relative aspect-[16/9] md:aspect-[3] overflow-hidden z-10">
             <div className="absolute inset-0 bg-black/50 z-10 w-full flex justify-center pt-32 md:pt-44">
                 <h1 className="relative z-20 text-4xl md:text-6xl font-bold text-white font-bricolage mx-auto w-fit">Services</h1>
             </div>
