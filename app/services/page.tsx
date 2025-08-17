@@ -1,13 +1,9 @@
 import React from "react";
 import ServicesHeroCarousel from "./_comps/ServicesHeroCarousel";
-import ContentCard from "@/app/_comps/content-card";
-import { ArrowRight, Rocket } from "lucide-react";
-import Image from "next/image";
 import AnimatedSectionTitle from "../_comps/AnimatedSectionTitle";
-import Link from "next/link";
-import ServiceCard from "@/app/services/_comps/service-card";
-import { SlideUpInView } from "@/components/magicui/slide-up-in-view";
 import SectionGetInTouch from "../(www)/_comps/SectionGetInTouch";
+import ServiceSection from "./_comps/ServiceSection";
+import ServiceGrid from "./_comps/ServiceGrid";
 
 const ServiceListPage = () => {
     const services = [
@@ -70,53 +66,23 @@ const ServiceListPage = () => {
                         Our Creative Stack
                     </AnimatedSectionTitle>
 
-                    <div className="flex flex-col-reverse lg:flex-row w-full items-start lg:items-center justify-between mt-20 gap-8 lg:gap-0">
-                        <div className="flex flex-col flex-1">
-                            <h2 className="text-xl md:text-2xl font-bold text-brand-secondary">Photography and Post-Production Services</h2>
-                            <p className="text-sm md:text-base font-inter-tight mt-4 md:mt-2 leading-relaxed text-neutral-900 w-full max-w-2xl tracking-wider">
-                                Cognivision Media ensures your imagery conveys value, quality, and trust from the very first glance. From the lens to the final pixel, we craft
-                                visual experiences that make your brand stand out in the crowded e-commerce space.
-                            </p>
-                            <Link
-                                href="/services/photography-and-post-production-services"
-                                className="mt-4 text-sm font-semibold text-brand-secondary hover:underline flex items-center gap-2"
-                            >
-                                <span>Learn More</span> <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-                        <span className="text-brand-secondary/30 text-6xl sm:text-8xl md:text-[120px] lg:text-[180px] xl:text-[240px] font-black leading-none self-center lg:self-auto">
-                            01
-                        </span>
-                    </div>
+                    <ServiceSection
+                        number="01"
+                        title="Photography and Post-Production Services"
+                        description="Cognivision Media ensures your imagery conveys value, quality, and trust from the very first glance. From the lens to the final pixel, we craft visual experiences that make your brand stand out in the crowded e-commerce space."
+                        learnMoreHref="/services/photography-and-post-production-services"
+                    >
+                        <ServiceGrid services={services} />
+                    </ServiceSection>
 
-                    <SlideUpInView className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                        {services.map((service) => (
-                            <ServiceCard key={service.title} title={service.title} href={service.href} imageSrc={service.imageSrc} badge={service.badge} />
-                        ))}
-                    </SlideUpInView>
-
-                    <div className="flex flex-col-reverse lg:flex-row w-full items-start lg:items-center justify-between mt-20 gap-8 lg:gap-0">
-                        <div className="flex flex-col flex-1">
-                            <h2 className="text-xl md:text-2xl font-bold text-brand-secondary">Creative Direction</h2>
-                            <p className="text-sm md:text-base font-inter-tight mt-4 md:mt-2 leading-relaxed text-neutral-900 w-full max-w-2xl tracking-wider">
-                                Our Creative Direction service is a strategic partnership that ensures your brand&apos;s visual identity is consistent, impactful, and authentically
-                                aligned with your business goals. We don&apos;t just create content—we craft a narrative that resonates with your audience, driving engagement and
-                                loyalty.
-                            </p>
-                            <Link href="/services/creative-direction" className="mt-4 text-sm font-semibold text-brand-secondary hover:underline flex items-center gap-2">
-                                <span>Learn More</span> <ArrowRight className="w-4 h-4" />
-                            </Link>
-                        </div>
-                        <span className="text-brand-secondary/30 text-6xl sm:text-8xl md:text-[120px] lg:text-[180px] xl:text-[240px] font-black leading-none self-center lg:self-auto">
-                            02
-                        </span>
-                    </div>
-
-                    <SlideUpInView className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-                        {services.slice(0, 4).map((service) => (
-                            <ServiceCard key={service.title} title={service.title} href={service.href} imageSrc={service.imageSrc} badge={service.badge} />
-                        ))}
-                    </SlideUpInView>
+                    <ServiceSection
+                        number="02"
+                        title="Creative Direction"
+                        description="Our Creative Direction service is a strategic partnership that ensures your brand's visual identity is consistent, impactful, and authentically aligned with your business goals. We don't just create content—we craft a narrative that resonates with your audience, driving engagement and loyalty."
+                        learnMoreHref="/services/creative-direction"
+                    >
+                        <ServiceGrid services={services.slice(0, 4)} />
+                    </ServiceSection>
                 </div>
             </section>
 
