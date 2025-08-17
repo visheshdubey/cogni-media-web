@@ -152,16 +152,24 @@ const ServiceDetailSection: React.FC<{ section: ServiceSection; index: number }>
             </div>
 
             {/* Slider + Task list */}
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+            <div className="flex items-start w-full bg-brand-primary rounded-2xl">
                 {/* Slider 80% */}
-                <div className="lg:col-span-4">
+                <div className="w-4/5">
                     <div className="relative">
                         <Carousel setApi={setApi} className="w-full" opts={{ align: "start", loop: false }}>
                             <CarouselContent>
                                 {section.slides.map((slide, i) => (
                                     <CarouselItem key={`${section.title}-slide-${i}`}>
-                                        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-2xl border border-black/5 bg-white/60 shadow-sm">
-                                            <Image src={slide.imageSrc} alt={slide.imageAlt ?? section.title} fill sizes="100vw" className="object-cover" />
+                                        <div className="relative w-full overflow-hidden rounded-2xl aspect-[16/9]">
+                                            <Compare
+                                                firstImage="https://assets.aceternity.com/code-problem.png"
+                                                secondImage="https://assets.aceternity.com/code-solution.png"
+                                                firstImageClassName="object-cover object-left-top"
+                                                secondImageClassname="object-cover object-left-top"
+                                                className="h-full w-full"
+                                                slideMode="hover"
+                                            />
+                                            {/* <Image src={slide.imageSrc} alt={slide.imageAlt ?? section.title} fill sizes="100vw" className="object-cover" /> */}
                                         </div>
                                     </CarouselItem>
                                 ))}
@@ -171,31 +179,21 @@ const ServiceDetailSection: React.FC<{ section: ServiceSection; index: number }>
                         </Carousel>
                     </div>
                 </div>
-
                 {/* Task list 20% */}
-                <div className="lg:col-span-1">
-                    <div className="sticky top-24 rounded-2xl border border-black/5 bg-white/60 p-4 shadow-sm">
-                        <h4 className="text-sm font-semibold text-brand-secondary mb-2">Performed</h4>
+                <div className="w-1/5 h-1/2 flex ">
+                    <div className="p-6">
+                        <h4 className="text-lg font-semibold text-white mb-2">Performed</h4>
                         <ul className="space-y-2">
                             {activeSlide.tasks.map((task, idx) => (
-                                <li key={`${section.title}-task-${selectedIndex}-${idx}`} className="flex items-start gap-2 text-[13px]">
-                                    <Check className="mt-0.5 h-3.5 w-3.5 text-brand-secondary" />
-                                    <span className="leading-snug">{task}</span>
+                                <li key={`${section.title}-task-${selectedIndex}-${idx}`} className="flex items-start gap-2 text-[13px] text-white/90">
+                                    <Check className="mt-0.5 h-3.5 w-3.5 text-white/80" />
+                                    <span className="leading-snug font-medium">{task}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <Compare
-                firstImage="https://assets.aceternity.com/code-problem.png"
-                secondImage="https://assets.aceternity.com/code-solution.png"
-                firstImageClassName="object-cover object-left-top"
-                secondImageClassname="object-cover object-left-top"
-                className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
-                slideMode="hover"
-            />
         </div>
     );
 };
