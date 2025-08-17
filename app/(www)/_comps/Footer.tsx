@@ -27,10 +27,7 @@ const Footer = () => {
         { name: "Services", href: "/services" },
         { name: "Industries", href: "/industries" },
         { name: "Contact", href: "/contact" },
-        { name: "Blog", href: "/blog" },
         { name: "Careers", href: "/careers" },
-        { name: "Privacy Policy", href: "/privacy" },
-        { name: "Terms of Service", href: "/terms" },
     ];
 
     const socialLinks = [
