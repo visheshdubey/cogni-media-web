@@ -21,7 +21,7 @@ const SectionServices = () => {
                         alt="Services"
                         width={1000}
                         height={1000}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover aspect-video"
                     />
                 </div>
             </SlideUpInView>
@@ -32,7 +32,7 @@ const SectionServices = () => {
                         alt="Services"
                         width={1000}
                         height={1000}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover aspect-video"
                     />
                 </div>
             </SlideUpInView>
