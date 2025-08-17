@@ -8,7 +8,8 @@ import { Check } from "lucide-react";
 import { Compare } from "@/components/ace-ui/compare";
 
 type Slide = {
-    imageSrc: string;
+    imageSrcA: string;
+    imageSrcB: string;
     imageAlt?: string;
     tasks: string[];
 };
@@ -36,12 +37,14 @@ const SERVICE_PAGES: Record<string, ServicePageData> = {
                     "Cognivision Media ensures your imagery conveys value, quality, and trust from the very first glance. We craft visual experiences that help your brand stand out.",
                 slides: [
                     {
-                        imageSrc: "/home/home-section-services-1.jpg",
+                        imageSrcA: "https://placehold.co/600x400/D9D9D9/FFFFFF",
+                        imageSrcB: "https://placehold.co/600x400/000000/FFFFFF",
                         imageAlt: "Studio product setup",
                         tasks: ["Studio lighting setup", "Multi-angle coverage", "Color accuracy calibration", "Raw processing pipeline"],
                     },
                     {
-                        imageSrc: "/home/hero-slide-2.jpg",
+                        imageSrcA: "https://placehold.co/600x400/D9D9D9/FFFFFF",
+                        imageSrcB: "https://placehold.co/600x400/000000/FFFFFF",
                         imageAlt: "Lifestyle composition",
                         tasks: ["Set design and props", "Model direction", "On-set tethering", "Client live review"],
                     },
@@ -53,12 +56,14 @@ const SERVICE_PAGES: Record<string, ServicePageData> = {
                 description: "From cleanup to high-end beauty retouching and compositing, our edit lab produces consistent, on-brand assets at scale.",
                 slides: [
                     {
-                        imageSrc: "/home/home-section-services-2.jpg",
+                        imageSrcA: "https://placehold.co/600x400/D9D9D9/FFFFFF",
+                        imageSrcB: "https://placehold.co/600x400/000000/FFFFFF",
                         imageAlt: "Retouching workstation",
                         tasks: ["Non-destructive retouching", "Background cleanup", "Shadow and reflection build", "Export presets per channel"],
                     },
                     {
-                        imageSrc: "/about-us/who-we-are.jpg",
+                        imageSrcA: "https://placehold.co/600x400/D9D9D9/FFFFFF",
+                        imageSrcB: "https://placehold.co/600x400/000000/FFFFFF",
                         imageAlt: "Color grading preview",
                         tasks: ["Batch color grading", "CMYK and sRGB variants", "Metadata embedding", "QC and versioning"],
                     },
@@ -76,7 +81,8 @@ const SERVICE_PAGES: Record<string, ServicePageData> = {
                 description: "Narrative-first blueprints aligning messaging, visuals, and channels to business outcomes.",
                 slides: [
                     {
-                        imageSrc: "/home/hero-slide-2.jpg",
+                        imageSrcA: "https://placehold.co/600x400/D9D9D9/FFFFFF",
+                        imageSrcB: "https://placehold.co/600x400/000000/FFFFFF",
                         tasks: ["Audience mapping", "Concept boards", "Channel strategy", "KPI alignment"],
                     },
                 ],
@@ -162,14 +168,13 @@ const ServiceDetailSection: React.FC<{ section: ServiceSection; index: number }>
                                     <CarouselItem key={`${section.title}-slide-${i}`}>
                                         <div className="relative w-full overflow-hidden rounded-2xl aspect-[16/9]">
                                             <Compare
-                                                firstImage="https://assets.aceternity.com/code-problem.png"
-                                                secondImage="https://assets.aceternity.com/code-solution.png"
+                                                firstImage={slide.imageSrcA}
+                                                secondImage={slide.imageSrcB}
                                                 firstImageClassName="object-cover object-left-top"
                                                 secondImageClassname="object-cover object-left-top"
                                                 className="h-full w-full"
                                                 slideMode="hover"
                                             />
-                                            {/* <Image src={slide.imageSrc} alt={slide.imageAlt ?? section.title} fill sizes="100vw" className="object-cover" /> */}
                                         </div>
                                     </CarouselItem>
                                 ))}
