@@ -1,3 +1,4 @@
+import { Rocket } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -14,7 +15,17 @@ const ServiceOverlayStackCard = ({ imageSrc, title }: Props) => {
             <div className="group-hover:scale-[85%] scale-90 transition-all duration-500 ease-out rounded-2xl absolute w-1/2 border origin-center border-white/10 aspect-[1.8] group-hover:top-[calc(50%-32px)] top-[calc(50%-40px)] right-6 -translate-y-1/2 bg-black/30 flex items-center justify-center"></div>
             <div className="group-hover:scale-[92%] scale-95 transition-all duration-500 ease-out rounded-2xl absolute w-1/2 border origin-center border-white/20 aspect-[1.8] group-hover:top-[calc(50%-16px)] top-[calc(50%-20px)] right-6 -translate-y-1/2 bg-black/10 flex items-center justify-center"></div>
             <div className="group-hover:scale-[98%] group-hover:bg-brand-primary/80 scale-100 transition-all duration-500 ease-out rounded-2xl absolute w-1/2 border border-white/30 aspect-[1.8] backdrop-blur-sm top-1/2 right-6 -translate-y-1/2 bg-black/60 flex items-center justify-center">
-                <h2 className="text-white text-2xl font-bold">{title}</h2>
+                <div className="p-4 md:p-6 flex flex-col">
+                    <div className="flex items-center p-[18px] w-fit h-fit bg-brand-primary/10 rounded-lg justify-center [&>svg]:text-brand-primary group-hover:[&>svg]:text-white group-hover:bg-white/10 transition-all duration-300">
+                        <Rocket className="size-6" />
+                    </div>
+
+                    <div className="text-[22px] font-semibold font-inter-tight text-white mt-8">{title}</div>
+
+                    <p className="font-inter-tight leading-relaxed tracking-wider text-white/80 mt-4">
+                        Integrates artificial intelligence into media services for smarter, data-backed content and visuals.
+                    </p>
+                </div>
             </div>
         </div>
     );
